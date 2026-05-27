@@ -1,0 +1,28 @@
+# Python virtual environment and cache
+maffa-be/.venv/
+maffa-be/__pycache__/
+maffa-be/app/__pycache__/
+maffa-be/app/config/__pycache__/
+maffa-be/app/models/__pycache__/
+maffa-be/app/modules/*/__pycache__/
+*.pyc
+
+# Node dependencies and build files
+maffa-fe/node_modules/
+maffa-fe/dist/
+maffa-fe/.env.local
+maffa-fe/.env.development.local
+maffa-fe/.env.test.local
+maffa-fe/.env.production.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Database caches
+*.db
+*.sqlite3
+
+# Environment secret files (extremely important to not commit)
+maffa-be/.env
+maffa-fe/.env
