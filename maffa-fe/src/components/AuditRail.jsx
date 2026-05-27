@@ -32,7 +32,11 @@ function formatLogs(items) {
       bg = '#FFD6F4'; ic = 'pk'; bc = 'ab-ok'; bt = 'Recognition';
     }
     const empPart = log.is_anonymous ? '🔒 Anon' : (log.employee_id ? `EMP-${log.employee_id}` : 'System');
-    const createdAt = log.created_at ? new Date(log.created_at) : null;
+    let dateStr = log.created_at;
+    if (dateStr && !dateStr.endsWith('Z') && !dateStr.includes('+')) {
+      dateStr = dateStr + 'Z';
+    }
+    const createdAt = dateStr ? new Date(dateStr) : null;
     return {
       bg, ic, bc, bt,
       ttl: log.event_type || 'System Event',
